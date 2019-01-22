@@ -88,8 +88,9 @@ def main():
                 print(data, text)
                 try:
                    write_to_influx(text, data)
-                except:
+                except Exception as e:
                     print("There is problem with value:", text)
+                    print(e)
                     continue
 
 if __name__ == '__main__':
